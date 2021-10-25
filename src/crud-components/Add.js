@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import axios from 'axios'
 import { useHistory } from "react-router-dom";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import { dividerClasses } from "@mui/material";
 
-const AddUser = () => {
+const Add = () => {
   let history = useHistory();
   const [user, setUser] = useState({
     name: "",
@@ -23,77 +20,68 @@ const AddUser = () => {
   const onSubmit = async e => {
     e.preventDefault();
     await axios.post("http://localhost:3003/users", user);
-    history.push("/userlist");
+    history.push("/");
   };
   return (
-      <>
-      <Header/>
-      <Sidebar/>
-      <div className="container">
-      <h1> Add Users...</h1>
-    <div className="container-fluid mt-3 ">
-      <div className="card w-75 mx-auto shadow p-3  ">
-        <h4 className=" heading text-center mb-4 ">Add a user</h4>
+    <div className="container mt-3">
+      <div className="w-75 mx-auto shadow p-5">
+        <h2 className=" heading text-center mb-4 ">Add A User</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
-              className="form-control form-control-lg shadow"
+              className="form-control form-control-lg"
               placeholder="Enter Your Name"
               name="name"
               value={name}
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="form-group mt-4">
+          <div className="form-group">
             <input
               type="text"
-              className="form-control form-control-lg shadow"
+              className="form-control form-control-lg"
               placeholder="Enter Your Username"
               name="username"
               value={username}
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="form-group mt-4">
+          <div className="form-group">
             <input
               type="email"
-              className="form-control form-control-lg shadow"
+              className="form-control form-control-lg"
               placeholder="Enter Your E-mail Address"
               name="email"
               value={email}
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="form-group mt-4">
+          <div className="form-group">
             <input
               type="text"
-              className="form-control form-control-lg shadow"
+              className="form-control form-control-lg"
               placeholder="Enter Your Phone Number"
               name="phone"
               value={phone}
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="form-group mt-4">
+          <div className="form-group">
             <input
               type="text"
-              className="form-control form-control-lg shadow"
+              className="form-control form-control-lg"
               placeholder="Enter Your Website Name"
               name="website"
               value={website}
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="text-center">
-          <button className="btn btn-dark mt-2 text-">Add User</button>
-          </div>
+          <button className="btn btn-warning btn-block">Add User</button>
         </form>
       </div>
     </div>
-    </div>
-    </>
   );
 };
 
-export default AddUser;
+export default Add;

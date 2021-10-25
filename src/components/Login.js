@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
-import Header from './Header';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import contact from '../assets/img/slider1.jpg'
+import contact from '../assets/img/service4.jpg'
+
 
 
 
@@ -29,15 +28,15 @@ function Login() {
 
 
             <div style={{ overflowX: "hidden" }}>
-                <section className="section-contact" style={{ backgroundImage: `url(${contact})`, width: '100%', height: 660, paddingTop: '5%' }}>
+                <section className="section-contact" style={{ backgroundImage: `url(${contact})`, width: '100%', height:685, paddingTop: '5%' }}>
                     <div className="container-fluid">
-                        <div className="col-sm-3 offset-sm-4 ">
-                            <div className="card shadow mt-5">
+                        <div className="col-md-3 mx-auto mt-5">
+                            <div className="card shadow">
 
 
                                 <h1 className="text-center text-white bg-black mt-3 p-2 ">Login</h1><br />
                                 <div className="container-fluid">
-                                    <p className="text-center">your first time login id is : <b>altamas@gmail.com</b> and password is : <b>altamas</b></p>
+                                    <p className="text-center">your first time login id is : <b>altamas@gmail.com</b><br/> and password is : <b>altamas</b></p>
                                     <form onSubmit={handleSubmit(onSubmit)}>
                                         <p className="text-danger">
                                             {errors.email?.type === 'required' && "email is required"}

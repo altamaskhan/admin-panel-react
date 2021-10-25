@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from "react-hook-form";
-import contact from '../assets/img/slider1.jpg'
+import contact from '../assets/img/service4.jpg';
 import Header from './Header';
-import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 
 
 function Signup() {
@@ -17,8 +16,8 @@ function Signup() {
        <Header/>
        {/* header end */}
 
-             <section className="section-contact" style={{ backgroundImage: `url(${contact})`, width:'100%', height:625, paddingTop:'5%' }}>
-            <div className="col-sm-3 offset-sm-5 mt-0">
+             <section className="section-contact" style={{ backgroundImage: `url(${contact})`, width:'100%', height:615, paddingTop:'5%' }}>
+            <div className="col-md-3 mx-auto">
                 <div className="card shadow">
                 <h1 className="text-center text-white bg-black mt-3 p-2">SignUp</h1><br />
                     <div className="container-fluid">

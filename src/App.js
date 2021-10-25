@@ -8,6 +8,9 @@ import UserList from './UserList';
 import AddUser from './AddUser';
 import Signup from './components/Signup';
 import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
+import PageNotFound from './components/PageNotFound';
+import Home from './crud-components/Home';
+import Add from './crud-components/Add';
 
 
 function App() {
@@ -25,6 +28,10 @@ function App() {
         <Route path='/userlist' component={UserList}/>
         <Route path='/adduser' component={AddUser}/>
         
+        {/* <Route path='/add' component={Add}/>
+        <Route path='/home' component={Home}/> */}
+        
+        <Route component={PageNotFound}/>
         </Switch>
       </Router>
     </div>

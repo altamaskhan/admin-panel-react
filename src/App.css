@@ -48,12 +48,14 @@
     margin-top: 15px;
   }
   .container{
-    background-color:rgb(228, 241, 253);
+ 
+    background-color:lightblue;
     margin-left: 20%;
     margin-top: 20px;
     width: auto;
     margin-right: 20px;
     }
+   
  
 .navbar-brand{
 font-size: 30px;

@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import UserList from '../UserList';
+import UserList from '../UserList';
 import Pagination from '@material-ui/lab/Pagination';
 import { typography } from '@mui/system';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 
-function UserList() {
+function Home() {
     const [page, setPage] = useState(1);
     const [post, setPost] = useState([])
     const loadPost = async () => {
@@ -21,15 +19,12 @@ function UserList() {
 
     return (
         <div>
-        <Header/>
-        <Sidebar/>
-        <div className="container">
-            <h1>User List...</h1>
+            <h1>home data</h1>
 
-            <table className="table">
+            <table class="table">
                 <thead>
                     <tr>
-
+                        <th scope="col">#</th>
                         <th scope="col">Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">User Name</th>
@@ -41,8 +36,9 @@ function UserList() {
                 <tbody>
 
                     {
-                        post.map((posts,id) => (
+                        post.map((posts,index) => (
                             <tr>
+                            <th scope ="row">{index +1}</th>
                                 <td>{posts.id}</td>
                                 <td>{posts.name}</td>
                                 <td>{posts.username}</td>
@@ -68,10 +64,7 @@ function UserList() {
             />
             </div>
         </div>
-        
-        </div>
-        
     )
 }
 
-export default UserList
+export default Home
